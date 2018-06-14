@@ -1,3 +1,4 @@
+//Efecto menu-mobile
 var active = false;
 $('#show-menu').on('click',function(e){
 	e.preventDefault();
@@ -9,6 +10,9 @@ $('#show-menu').on('click',function(e){
 		active = false;
 	}
 });
+
+// Efecto de search
+
 var active_s = false;
 $('.buscar').on('click',function(e){
 	e.preventDefault();
@@ -19,5 +23,18 @@ $('.buscar').on('click',function(e){
 		$('.search').css('visibility', 'hidden');
 		active_s = false;
 	}
+});
 
+//Efecto categorias
+
+var active_c = false;
+$('.categorias').on('click',function(e){
+	e.preventDefault();
+	if(active_c === false){
+		$('.categories').css('visibility', 'visible');
+		active_c = true;
+	}else{
+		$('.categories').css('visibility', 'hidden');
+		active_c = false;
+	}
 })
