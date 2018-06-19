@@ -2,6 +2,9 @@
 	padding: 0;
 	margin:0;
 }
+a{
+	text-decoration: none;
+}
 body{
 	font-family: "Roboto", Arial, sans-serif;
 }
@@ -73,7 +76,7 @@ body{
 }
 .head .nav nav a:hover,
 .head .nav nav .categorias:hover{
-	padding-bottom: 10px;
+	padding-bottom: 11px;
 	border-bottom:1px solid rgba(0,0,0,.4);
 }
 .head .categories{
@@ -91,7 +94,7 @@ body{
 	text-align: center;
 	visibility: hidden;
 }
-.head .categories p{
+.head .categories a{
 	text-align: center;
 	width: 20%;
 	padding: 10px 0px;
@@ -102,7 +105,7 @@ body{
 	font-weight: 300;
 	font-size: 18px;
 }
-.head .categories p:hover{
+.head .categories a:hover{
 	color:rgba(0,0,0,.7);
 	border-bottom: 1px solid rgba(0,0,0,.5);
 }
@@ -198,6 +201,10 @@ body{
 }
 .search form{
 	box-sizing: border-box;
+	margin:0 auto;
+	display:flex;
+	justify-content: center;
+	align-items: flex-start;
 }
 .search input[type='text']{
 	border:none;
@@ -209,12 +216,13 @@ body{
 }
 .search input[type='submit']{
 	border:none;
-	padding: 7px;
+	padding: 6px;
 	border-radius: 0px 7px 7px 0px;
 	font-size: 17px;
 	font-weight: 300;
 	color:rgba(0,0,0,.7);
 	cursor:pointer;
+	margin-left: 3px;
 }
 .search input[type='submit']:hover{
 	color:rgba(0,0,0,.9);
@@ -253,12 +261,14 @@ body{
 	color:#5297ED;
 }
 .destacados .titulo,
-.comunes .titulo{
+.comunes .titulo,
+.comousar .titulo{
 	text-align: center;
 	margin-top: -18px;
 }
 .destacados .border,
-.comunes .border{
+.comunes .border,
+.comousar .border{
 	height: 1px;
 	width: 40%;
 	display: inline-block;
@@ -266,7 +276,8 @@ body{
 	margin-bottom: 7px;
 }
 .destacados .tit,
-.comunes .tit{
+.comunes .tit,
+.comousar .tit{
 	font-size: 30px;
 	font-weight: 300;
 	display: inline-block;
@@ -351,6 +362,7 @@ body{
 }
 .common .desc{
 	margin-left: 5px;
+	width:100%;
 }
 .common .desc .titulo{
 	margin-top: 5px;
@@ -407,6 +419,59 @@ body{
 	color:rgba(0,0,0,.8);
 }
 
+/*---------------------------Estilos ComoUsar---------------------------*/
+
+.comousar{
+	margin-top: 150px;
+}
+.comousar .ayuda{
+	margin-top: 50px;
+	text-align: left;
+	padding:20px 50px;
+}
+.comousar li{
+	font-size: 27px;
+	font-weight: 300;
+	margin-bottom: 20px;
+	text-align: center;
+	color:#D98119;
+	list-style: thai;
+}
+.comousar li span{
+	opacity: .7;
+	font-size: 25px;
+	color:gray;
+}
+.comousar .ayuda p{
+	font-size: 18px;
+	margin: 0 100px;
+	text-align: center;
+	margin-bottom: 20px;
+	font-weight: 300;
+}
+
+/*----------------------------Estilos Footer----------------------------*/
+
+footer{
+	background: black;
+	margin-top: 50px;
+	padding: 20px 40px;
+	display: flex;
+	justify-content: space-between;
+}
+footer .sanluis{
+}
+footer .king{
+}
+footer .king p{
+}
+footer .sanluis,
+footer .king{
+	font-size: 22px;
+	font-weight: 300;
+	color:white;
+}
+
 /*----------------------------------------------------------------------*/
 /*---------------------------Media Queries------------------------------*/
 /*----------------------------------------------------------------------*/
@@ -419,7 +484,7 @@ body{
 	.herramientas{
 		margin-top: 445px;
 	}
-	.head .categories p{
+	.head .categories a{
 		width: 25%;
 	}
 	.destacados .border,
@@ -468,6 +533,7 @@ body{
 	.head .nav nav .categorias:hover{
 		margin-left: -10px;
 		padding-left: 10px;
+		padding-bottom: 11px;
 	}
 	.head .categories{
 		left:15px;
@@ -476,7 +542,7 @@ body{
 		border: .1px solid rgba(255,255,255,.2);
 		width: 90%;
 	}
-	.head .categories p{
+	.head .categories a{
 		width: 22%;
 	}
 
@@ -498,7 +564,8 @@ body{
 		margin-top: 0;
 	}
 	.destacados .border,
-	.comunes .border{
+	.comunes .border,
+	.comousar .border{
 		width: 30%;
 	}
 	.destacados .viewmore p{
@@ -531,20 +598,26 @@ body{
 	.commons .common img{
 		opacity: 1;
 	}
+	footer .sanluis,
+	footer .king{
+		font-size: 18px;
+	}
 }
 @media screen and (max-width: 550px){
 	.head img{
 		height: 350px;
 	}
 	.destacados .border,
-	.comunes .border{
+	.comunes .border,
+	.comousar .border{
 		width: 27%;
 	}
 	.herramientas{
 		margin-top: 145px;
 	}
 	.destacados .tit,
-	.comunes .tit{
+	.comunes .tit,
+	.comousar .tit{
 		font-size: 25px;
 	}
 	.destacados .viewmore{
@@ -585,9 +658,16 @@ body{
 		text-align: center;
 		margin-left: 10px;
 	}
-	/*.common .desc .info .options .precio p{
-		text-align: left;
-	}*/
+	.comousar .ayuda p{
+	margin: 0 50px;
+	}
+	footer{
+		padding:20px;
+	}
+	footer .sanluis,
+	footer .king{
+		font-size: 16px;
+	}
 }
 @media screen and (max-width: 420px){
 	.head img{
@@ -604,10 +684,11 @@ body{
 	.herramientas .menu .menu-btns .buscar,
 	.herramientas .menu .menu-btns .loged-user,
 	.herramientas .menu .menu-btns .loged-arrow{
-		padding: 7px 10px;
+		padding: 7px 15px;
 	}
 	.destacados .border,
-	.comunes .border{
+	.comunes .border,
+	.comousar .border{
 		width: 20%;
 	}
 	.d-anuncios .anuncio{
@@ -618,6 +699,25 @@ body{
 	}
 	.d-anuncios .anuncio .text p.info{
 		font-size: 15px;
+	}
+	.comousar .ayuda p{
+		margin: 0 30px;
+		font-size: 17px;
+		margin-bottom: 30px;
+	}
+	footer{
+		flex-wrap: wrap;
+	}
+	footer .sanluis,
+	footer .king{
+		font-size: 20px;
+		width: 100%;
+		text-align: center;
+		border-bottom: 1px solid rgba(255,255,255,.3);
+		padding-bottom: 9px;
+	}
+	footer .king{
+		margin-top: 10px;
 	}
 
 }
@@ -637,9 +737,9 @@ body{
 	.herramientas .menu .menu-btns .buscar,
 	.herramientas .menu .menu-btns .loged-user,
 	.herramientas .menu .menu-btns .loged-arrow{
-		padding: 7px;
+		padding: 7px 13px;
 	}
-	.head .categories p{
+	.head .categories a{
 		padding: 10px 5px;
 	}
 	.destacados .viewmore p{
@@ -655,5 +755,26 @@ body{
 		border:none;
 		background: #5297ED;
 		color: white;
+	}
+	.comousar{
+		margin-top: 40px;
+	}
+	.comousar .ayuda{
+		margin-top: 10px;
+	}
+	.comousar .ayuda p{
+		margin: 0 15px;
+		font-size: 17px;
+		margin-bottom: 30px;
+	}
+}
+
+@media screen and (max-width: 320px){
+	.herramientas .menu .menu-btns .login,
+	.herramientas .menu .menu-btns .añadir,
+	.herramientas .menu .menu-btns .buscar,
+	.herramientas .menu .menu-btns .loged-user,
+	.herramientas .menu .menu-btns .loged-arrow{
+		padding: 7px 10px;
 	}
 }

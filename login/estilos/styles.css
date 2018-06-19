@@ -1,0 +1,89 @@
+*{
+  margin:0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+:hover,:focus{
+  text-decoration: none;
+  list-style: none;
+}
+body{
+  background: #D2D1D1;
+}
+.contenedor{
+  max-width: 500px;
+  margin: 120px auto 0px auto;
+}
+.titulo{
+  text-align: center;
+}
+.titulo h1{
+  color: #0A113E;
+  font-weight: 300;
+  font-size: 40px;
+}
+.titulo h1 span{
+  font-weight: 400;
+  color:#0E2452;
+}
+.formulario{
+  background: white;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 2px;
+}
+.info{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 300;
+}
+.formulario form{
+  width: 100%;
+}
+.formulario input[type=text],
+.formulario input[type=password]{
+  width: 100%;
+  padding:12px;
+  margin-bottom: 10px;
+  border:none;
+  border:1px solid #B5B7B3;
+  border-radius: 2px;
+}
+.formulario .btn{
+  border:none;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  background: #4575D8;
+  border-radius: 3px;
+  margin-top: 30px;
+  cursor:pointer;
+}
+.formulario input[type=text]:focus,
+.formulario input[type=password]:focus{
+  border:1px solid #4575D8;
+}
+.formulario .btn:hover{
+  background:#4E90F2 ;
+}
+.formulario .areyou{
+  margin-top: 20px;
+  text-align: center;
+}
+.formulario .areyou p{
+  font-size: 19px;
+  font-weight: 300;
+}
+.formulario .areyou a{
+  text-decoration: none;
+  color: #4575D8 ;
+  display:inline-block;
+  font-weight: 400;
+  font-size:17px ;
+  padding: 10px;
+}
+.formulario .areyou a:hover{
+  color:#4E90F2;
+}
