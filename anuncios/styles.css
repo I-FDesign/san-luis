@@ -1,0 +1,113 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Open Sans', Arial, sans-serif;
+}
+.anuncio{
+	width: 70%;
+	max-width: 1000px;
+	margin:0 auto;
+	margin-top: 50px;
+	padding: 25px;
+	box-shadow: 0px 0px 5px rgba(0,0,0, .5);
+}
+.anuncio .info{
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Oswald', 'Open Sans', Arial, sans-serif;
+}
+.anuncio .info h2{
+	font-size: 30px;
+	line-height: 28px;
+	font-weight: 400;
+}
+.anuncio .info p{
+	font-size: 20px;
+}
+.anuncio .info p span{
+	font-weight: bold;
+}
+.anuncio .form{
+	margin-top: 20px;
+}
+.anuncio .form form input[type="text"]{
+	width: 100%;
+	border:none;
+	border:1px solid rgba(128,128,128,.7);
+	margin-bottom: 20px;
+	padding: 20px;
+	font-size: 16px;
+	border-radius: 3px;
+	font-family: Arial, sans-serif;
+}
+.anuncio .form form textarea{
+	padding: 20px;
+	margin-bottom: 20px;
+	border:1px solid rgba(128,128,128,.7);
+	font-size: 16px;
+	border-radius: 3px;
+	font-family: Arial, sans-serif;
+	min-width: 100%;
+	max-width: 100%;
+	max-height: 400px;
+	min-height: 70px;
+}
+.anuncio .form form input[type="text"]:focus,
+.anuncio .form form textarea:focus{
+	padding: 19px;
+	border:2px solid #505050;
+}
+.anuncio .form form .img{
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 50px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid rgba(0,0,0,.3);
+}
+.anuncio .form form label{
+	display: block;
+}
+.anuncio .form form input[type='file']{
+	display:block;
+}
+.anuncio .form form .status{
+	display:flex;
+	justify-content: center;
+	margin-bottom: 20px;
+	padding: 10px 50px;
+	border-bottom: 1px solid rgba(0,0,0,.3);
+	align-items: center;
+}
+.anuncio .form form .status label{
+	margin-right: 20px;
+}
+.anuncio .form form .error{
+	margin:20px 0;
+	margin-top: 0px;
+	font-size: 17px;
+	color:rgba(250,57,57,1);
+	padding: 10px;
+	border-bottom: .5px solid rgba(240,97,97,.7);
+	text-align: center;
+}
+.anuncio .form form .error p{
+	padding: 5px;
+}
+.anuncio .form form input[type='submit']{
+	display:block;
+	margin:10px auto;
+	border:none;
+	cursor:pointer;
+	background: #C04040;
+	color:white;
+	padding: 20px 80px;
+	border-radius: 3px;
+	font-size: 16px;
+	font-family: Arial;
+}
+.anuncio .form form input[type='submit']:hover{
+	background: #595959;
+}

@@ -22,7 +22,7 @@
 			$errores = 'Completa los campos obligatorios' . '<br />';
 		}
 
-		$conexion = conect('redsocial');
+		$conexion = conect('sanluis');
 		$statement = $conexion->prepare('SELECT * FROM usuarios WHERE user = :user');
 		$statement->execute(array(':user' => $user));
 		$resultado= $statement->fetch();

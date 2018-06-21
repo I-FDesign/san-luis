@@ -73,7 +73,7 @@
 								</div>
 							</div>
 						<?php endif; ?>
-						<div class="añadir">
+						<div class="añadir" id='add'>
 							<i class="fa fa-plus" aria-hidden="true"></i>
 						</div>
 						<div class="buscar">

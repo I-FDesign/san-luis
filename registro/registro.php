@@ -55,7 +55,7 @@
 
 	//---------Sub. a BD----------------------------
 
-		$conexion = conect('redsocial');
+		$conexion = conect('sanluis');
 		if(!$conexion){
 			header('Location ../error.php');
 		}
