@@ -1,7 +1,7 @@
 <?php session_start();
 	require 'admin/functions.php';
 	$conexion = conect('sanluis');
-	$categoria = (isset($_GET['cat']) && !is_numeric($_GET['cat'])) ? $_GET['cat'] : 'all';
+	$categoria = (isset($_GET['cat']) && !is_numeric($_GET['cat']) && !empty($_GET['cat'])) ? $_GET['cat'] : 'all';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,14 +83,81 @@
 				</div>
 			</div>
 		</div>
+
+		<?php require 'search.php'; ?>
 		<div class="search">
 			<div class="content">
-				<form action="">
-					<input type="text" placeholder="Buscar">
-					<input type="submit" value='Buscar'>
+				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method = 'get'>
+					<input type="text" placeholder="Buscar" name='search'>
+					<input type="submit" value='Buscar' name='find'>
 				</form>
 			</div>
 		</div>
+
+		<!--Datos que se mostraran si se realiza una busqueda  -->
+
+		<?php if(isset($_GET['find']) && !empty($_GET['search']) && !empty($busqueda)): ?>
+			<style type="text/css">
+				.search{
+					visibility: visible;
+				}
+			</style>
+			
+			<div class="comunes">
+			<div class="titulo">
+					
+					<div class="tit" style='width: 90%; padding-bottom: 9px; border-bottom: 1px solid rgba(0,0,0,.7)'>
+						<?php echo $message ?></div>
+			</div>
+			<div class="commons">
+
+				<!-- Obteniendo anuncios desde la BD -->
+				<?php if($categoria == 'all'){
+							$statement = $conexion->prepare('SELECT * FROM anuncios WHERE estado = :estado LIMIT 8');
+							$statement->execute(array(':estado' => 'common'));
+							$resultados_c = $statement->fetchAll();
+						}else{
+								$statement = $conexion->prepare('SELECT * FROM anuncios WHERE categoria = :categoria AND estado = :estado');
+								$statement->execute(array(
+									':categoria' => $categoria,
+									':estado' => 'common'
+								));
+								$resultados_c = $statement->fetchAll();
+							} 
+				?>
+
+				<!-- Mostrandolos en pantalla -->
+				<?php foreach($resultados as $resultado): ?>
+
+					<div class="common" style='width: 100%'>
+						<img src="img/anuncios/<?php echo $resultado['thumb'] ?>" alt="<?php echo $resultado['titulo'] ?>" width="150" height="200">
+						<div class="desc">
+							<div class="titulo">
+								<p><?php echo $resultado['titulo'] ?></p>
+						</div>
+							<div class="info">
+								<div class="fecha">
+									<i class="fa fa-calendar" aria-hidden="true"></i>
+									<p class="date"><?php echo $resultado['fecha'] ?></p>
+								</div>
+								<p class='if'><?php echo $resultado['descripcion'] ?></p>
+								<div class="options">
+									<div class="precio">
+										<p>Precio: <span><?php echo $resultado['precio'] ?></span></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				<?php endforeach; ?>
+			</div>
+
+		<?php endif; ?>
+
+		<!--Datos que se mostraran si no se realiza una busqueda  --> 
+
+		<?php if(!isset($busqueda)): ?>
 		<div class="destacados">
 			<div class="content">
 				<div class="viewmore">
@@ -134,8 +201,8 @@
 
 						<?php endforeach; ?>
 				</div>
-			</div>
-		</div>
+			</div> 
+		</div> 
 		<div class="comunes">
 			<div class="titulo">
 					<div class="border"></div>
@@ -175,18 +242,22 @@
 								</div>
 								<p class='if'><?php echo $resultado['descripcion'] ?></p>
 								<div class="options">
-									<div class="options"></div><div class="config"><i class="fa fa-cog" aria-hidden="true"></i></div>
+								<?php if(isset($_SESSION['sl_user']) && $resultado['creator'] == $_SESSION['sl_user']): ?>
+									<div class="config"><a href="anuncios/edit/?id=<?php echo $resultado['id'] ?>"><i class="fa fa-cog" aria-hidden="true"></i></a></div>
+								<?php endif; ?>
 									<div class="precio">
 										<p>Precio: <span><?php echo $resultado['precio'] ?></span></p>
 									</div>
 								</div>
+						
 							</div>
 						</div>
 					</div>
 
 				<?php endforeach; ?>
-			</div>
+			</div> 
 		</div>
+		<?php endif; ?>
 		<div class="comousar">
 			<div class="titulo">
 				<div class="border"></div>

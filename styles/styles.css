@@ -216,7 +216,7 @@ body{
 }
 .search input[type='submit']{
 	border:none;
-	padding: 6px;
+	padding: 7px;
 	border-radius: 0px 7px 7px 0px;
 	font-size: 17px;
 	font-weight: 300;
@@ -389,7 +389,7 @@ body{
 	justify-content: flex-end;
 	align-items: baseline;
 }
-.common .desc .info .config{
+.common .desc .info .config a{
 	display: inline-block;
 	margin-top: 10px;
 	text-align: right;
@@ -397,8 +397,9 @@ body{
 	border:2px solid #FDBF04;
 	border-radius: 2px;
 	transition: .3s all ease;
+	color:black;
 }
-.common .desc .info .config:hover{
+.common .desc .info .config a:hover{
 	background: #FDBF04;
 	color:white;
 }
