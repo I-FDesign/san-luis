@@ -26,8 +26,8 @@
 				<input type="submit" name="login" value="Logueate" class='btn'>
 			</form>
 			<div class="areyou">
-				<p>¿Ya tienes una cuenta?</p>
-				<a href="../registro/registro.php">Logueate</a>
+				<p>¿Aún no tienes una cuenta?</p>
+				<a href="../registro/registro.php">Registrate</a>
 			</div>
 		</div>
 	</div>

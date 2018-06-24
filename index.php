@@ -83,7 +83,12 @@
 				</div>
 			</div>
 		</div>
-
+		<div class="user-options">
+			<div class="logout">
+				<i class="fa fa-sign-out" aria-hidden="true"></i>
+				<p>Cerrar Sesión</p>
+			</div>
+		</div>
 		<?php require 'search.php'; ?>
 		<div class="search">
 			<div class="content">
@@ -129,7 +134,7 @@
 				<!-- Mostrandolos en pantalla -->
 				<?php foreach($resultados as $resultado): ?>
 
-					<div class="common" style='width: 100%'>
+					<div class="common" value='<?php echo $resultado['id'] ?>' style='width: 100%'>
 						<img src="img/anuncios/<?php echo $resultado['thumb'] ?>" alt="<?php echo $resultado['titulo'] ?>" width="150" height="200">
 						<div class="desc">
 							<div class="titulo">
@@ -191,7 +196,7 @@
 					<!-- Mostrandolos en pantalla -->
 						<?php foreach($resultados_d as $resultado): ?>
 
-							<div class="anuncio">
+							<div class="anuncio" value='<?php echo $resultado['id'] ?>'>
 								<img src="img/anuncios/<?php echo $resultado['thumb'] ?>" alt="<?php echo $resultado['titulo'] ?>" height="170" width="250">
 								<div class="text">
 									<p class="tit"><?php echo $resultado['titulo'] ?></p>
@@ -204,6 +209,14 @@
 			</div> 
 		</div> 
 		<div class="comunes">
+			<div class="content">
+				<div class="viewmore">
+					<p>Ver más</p>
+					<div class="vm-icon">
+						<i class="fa fa-angle-right" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
 			<div class="titulo">
 					<div class="border"></div>
 					<div class="tit">Comunes</div>
@@ -229,7 +242,7 @@
 				<!-- Mostrandolos en pantalla -->
 				<?php foreach($resultados_c as $resultado): ?>
 
-					<div class="common">
+					<div class="common" value='<?php echo $resultado['id'] ?>'>
 						<img src="img/anuncios/<?php echo $resultado['thumb'] ?>" alt="<?php echo $resultado['titulo'] ?>" width="150" height="200">
 						<div class="desc">
 							<div class="titulo">
@@ -292,7 +305,7 @@
 				<i class="fa fa-angle-left"aria-hidden="true"></i> 
 			-->
 	<script src="js/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src='js/efects.js'></script>
-	<script type="text/javascript" src='js/app.js'></script>
+	<script type="text/javascript" src='js/efect.js'></script>
+	<script type="text/javascript" src='js/application.js'></script>
 </body>
 </html>

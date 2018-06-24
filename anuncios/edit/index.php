@@ -10,9 +10,11 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="../../styles/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
+	<?php require '../back.php' ?>
 	<div class="anuncio">
 		<div class="info">
 			<h2>Editar anuncio</h2>
@@ -47,5 +49,16 @@
 
 	</div>
 	
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#back').on('click', function(){
+				location.href = '../../';
+			});
+			$('#volver').on('click', function(){
+				location.href = '../../';
+			});
+		});
+	</script>
 </body>
 </html>

@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
+	<?php require '../back.php' ?>
 	<div class="anuncio">
 		<div class="info">
 			<h2>Nuevo anuncio</h2>
@@ -44,6 +45,16 @@
 		</div>
 
 	</div>
-	
+	<script src="../../js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#back').on('click', function(){
+				location.href = '../../';
+			});
+			$('#volver').on('click', function(){
+				location.href = '../../';
+			});
+		});
+	</script>
 </body>
 </html>

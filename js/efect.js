@@ -40,7 +40,21 @@ $(document).ready(function(){
 			active_c = false;
 		}
 	});
-	
+
+	//Efecto Logout
+
+	var active_l = false;
+		$('.loged-arrow').on('click',function(e){
+			e.preventDefault();
+			if(active_l === false){
+				$('.user-options').css('display', 'block');
+				active_l = true;
+			}else{
+				$('.user-options').css('display', 'none');
+				active_l = false;
+			}
+	});
+
 	//Scroll menu
 	var comoUsar = $('.ayuda').offset().top;
 

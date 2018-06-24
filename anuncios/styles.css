@@ -6,11 +6,33 @@
 body{
 	font-family: 'Open Sans', Arial, sans-serif;
 }
+.back{
+	background: #DB610F;
+	display:flex;
+	padding:0px 40px;
+	align-items: center;
+	font-size: 25px;
+	color:white;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	position: fixed;
+	width: 100%;
+	top:0;
+}
+.back i{
+	cursor:pointer;
+	padding: 10px;	
+}
+.back p{
+	cursor:pointer;
+	padding: 10px;
+	font-size: 20px;
+}
 .anuncio{
 	width: 70%;
 	max-width: 1000px;
 	margin:0 auto;
-	margin-top: 50px;
+	margin-top: 100px;
 	padding: 25px;
 	box-shadow: 0px 0px 5px rgba(0,0,0, .5);
 }
@@ -67,7 +89,7 @@ body{
 	margin-bottom: 10px;
 	border-bottom: 1px solid rgba(0,0,0,.3);
 }
-.anuncio .form form label{
+.anuncio .form form .img label{
 	display: block;
 }
 .anuncio .form form input[type='file']{
@@ -99,6 +121,7 @@ body{
 .anuncio .form form input[type='submit']{
 	display:block;
 	margin:10px auto;
+	margin-top: 40px;
 	border:none;
 	cursor:pointer;
 	background: #C04040;
@@ -110,4 +133,75 @@ body{
 }
 .anuncio .form form input[type='submit']:hover{
 	background: #595959;
+}
+
+/*-----------------------------------------------*/
+/*----------------Media Queries------------------*/
+/*-----------------------------------------------*/
+
+@media screen and (max-width: 1000px){
+	.anuncio .form form .img{
+		flex-wrap: wrap;
+		width: 100%;
+	}
+	.anuncio .form form .img label{
+		width: 100%;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.anuncio .form form input[type='file']{
+		margin:0 auto;
+		width: 100%;
+	}
+	.back{
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 600px){
+	.anuncio{
+		width: 100%;
+		box-shadow: none;
+	}
+	.anuncio .info{
+		flex-wrap: wrap;
+	}
+	.anuncio .info h2{
+		order:2;
+	}
+	.anuncio .info p{
+		text-align: right;
+		width: 100%;
+		order:1;
+	}
+	.anuncio .form form .img label{
+		font-size: 15px;
+	}
+	.anuncio .form form input[type='file']{
+		margin:0 auto;
+		text-align: center;
+	}
+	.anuncio .form form .img,
+	.anuncio .form form .status{
+		padding: 10px 0;
+	}
+	.anuncio .form form .status label{
+		font-size: 14px;
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	.anuncio .form form input[type='submit']{
+		padding: 20px 60px;
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-width: 450px){
+	.anuncio .info p{
+		font-size: 16px;
+	}
+	.anuncio .form form input[type='submit']{
+		padding: 20px 50px;
+		margin-top: 20px;
+	}
 }

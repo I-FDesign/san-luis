@@ -194,6 +194,29 @@ body{
 	transition: .5s all ease;
 	color:white;
 }
+.user-options{
+	background: black;
+	color:white;
+	position:absolute;
+	width: 200px;
+	left:72%;
+	border-radius: 0 0 3px 3px;
+	background: rgb(35, 34, 34);
+	display:none;
+}
+.user-options .logout{
+	display:flex;
+	align-items: center;
+	padding: 15px;
+	cursor:pointer;
+	font-size: 17px;
+}
+.user-options .logout p{
+	margin-left: 5px;
+}
+.user-options .logout:hover{
+	color: #EDF6B4;
+}
 .search{
 	background: #333;
 	padding:10px 0px;
@@ -233,28 +256,33 @@ body{
 .destacados{
 	margin-top: 50px;
 }
-.destacados .viewmore{
+.destacados .viewmore,
+.comunes .viewmore{
 	text-align: right;
 	padding: 0 20px;
 	margin-right: 5px;
 }
-.destacados .viewmore p{
+.destacados .viewmore p,
+.comunes .viewmore p{
 	display:inline-block;
 	cursor:pointer;
 	font-weight: 300;
 	color:#5297ED;
 }
-.destacados .viewmore p:hover{
+.destacados .viewmore p:hover,
+.comunes .viewmore p:hover{
 	color: #2075DD ;
 }
-.destacados .viewmore .vm-icon{
+.destacados .viewmore .vm-icon,
+.comunes .viewmore .vm-icon{
 	display:inline-block;
 	cursor:pointer;
 	padding: 3px 10px;
 	background: #5297ED;
 	color:white;
 }
-.destacados .viewmore .vm-icon:hover{
+.destacados .viewmore .vm-icon:hover,
+.comunes .viewmore .vm-icon:hover{
 	padding: 2px 9px;
 	border:1px solid #5297ED;
 	background: white;
@@ -343,7 +371,6 @@ body{
 	border-radius: 2px;
 	margin-bottom: 20px;
 	display:flex;
-	flex-wrap: no-wrap;
 	padding: 10px;
 	cursor:pointer;
 	box-shadow: 0px 5px 5px gray;
@@ -488,6 +515,9 @@ footer .king{
 	.head .categories a{
 		width: 25%;
 	}
+	.user-options{
+		left: 64%;
+	}
 	.destacados .border,
 	.comunes .border{
 		width: 35%;
@@ -559,6 +589,11 @@ footer .king{
 		font-size: 20px;
 		font-weight: 400;
 	}
+	.user-options{
+		left: 60%;
+		width: 150px;
+	}
+	
 
 /*--------------------------Estilos de Destacados--------------------------*/
 	.destacados{
@@ -569,14 +604,17 @@ footer .king{
 	.comousar .border{
 		width: 30%;
 	}
-	.destacados .viewmore p{
+	.destacados .viewmore p,
+	.comunes .viewmore p{
 		font-size: 14px;
 	}
-	.destacados .viewmore .vm-icon{
+	.destacados .viewmore .vm-icon,
+	.comunes .viewmore .vm-icon{
 		padding: 0px 7px;
 		margin-right: 20px;
 	}
-	.destacados .viewmore .vm-icon:hover{
+	.destacados .viewmore .vm-icon:hover,
+	.comunes .viewmore .vm-icon:hover{
 		padding: 0px 7px;
 		margin-right: 20px;
 		border:none;
@@ -616,18 +654,27 @@ footer .king{
 	.herramientas{
 		margin-top: 145px;
 	}
+	.user-options{
+		left: 50%;
+	}
+	.user-options .logout{
+		padding: 12px;
+	}
 	.destacados .tit,
 	.comunes .tit,
 	.comousar .tit{
 		font-size: 25px;
 	}
-	.destacados .viewmore{
+	.destacados .viewmore,
+	.comunes .viewmore{
 		margin-bottom: 5px;
 	}
-	.destacados .viewmore .vm-icon{
+	.destacados .viewmore .vm-icon,
+	.comunes .viewmore .vm-icon{
 		margin-right: 0px;
 	}
-	.destacados .viewmore .vm-icon:hover{
+	.destacados .viewmore .vm-icon:hover,
+	.comunes .viewmore .vm-icon:hover{
 		padding: 0px 7px;
 		margin-right: 0px;
 		border:none;
@@ -687,6 +734,13 @@ footer .king{
 	.herramientas .menu .menu-btns .loged-arrow{
 		padding: 7px 15px;
 	}
+	.user-options{
+		left:45%;
+	}
+	.user-options .logout{
+		padding: 10px;
+		font-size: 16px;
+	}
 	.destacados .border,
 	.comunes .border,
 	.comousar .border{
@@ -740,17 +794,27 @@ footer .king{
 	.herramientas .menu .menu-btns .loged-arrow{
 		padding: 7px 13px;
 	}
+	.user-options{
+		left: 40%;
+		width: 120px;
+	}
+	.user-options .logout{
+		font-size: 13.5px;
+	}
 	.head .categories a{
 		padding: 10px 5px;
 	}
-	.destacados .viewmore p{
+	.destacados .viewmore p,
+	.comunes .viewmore p{
 		font-size: 12px;
 	}
-	.destacados .viewmore .vm-icon{
+	.destacados .viewmore .vm-icon,
+	.comunes .viewmore .vm-icon{
 		margin-right: -10px;
 		padding: 0 5px;
 	}
-	.destacados .viewmore .vm-icon:hover{
+	.destacados .viewmore .vm-icon:hover,
+	.comunes .viewmore .vm-icon:hover{
 		padding: 0 5px;
 		margin-right: -10px;
 		border:none;
