@@ -12,8 +12,8 @@ body{
   background: #D2D1D1;
 }
 .contenedor{
-  max-width: 500px;
-  margin: 120px auto 0px auto;
+  width: 50%;
+  margin: 120px auto 50px auto;
 }
 .titulo{
   text-align: center;
@@ -86,4 +86,17 @@ body{
 }
 .formulario .areyou a:hover{
   color:#4E90F2;
+}
+.error{
+  color:#F23D3D;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 767px){
+  .contenedor{
+    max-width: 100%;
+    width: 90%;
+    margin:50px auto;
+  }
 }

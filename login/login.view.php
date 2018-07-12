@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>Logueate</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
 	<link rel="stylesheet" href="estilos/styles.css">
 </head>
@@ -27,7 +28,7 @@
 			</form>
 			<div class="areyou">
 				<p>¿Aún no tienes una cuenta?</p>
-				<a href="../registro/registro.php">Registrate</a>
+				<a href="../registro/">Registrate</a>
 			</div>
 		</div>
 	</div>

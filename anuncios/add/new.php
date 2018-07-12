@@ -7,7 +7,7 @@
 		header('Location: ../../login/login.php');
 	}
 
-	$conexion = conect('sanluis');
+	$conexion = conect();
 	$statement = $conexion->prepare('SELECT * FROM usuarios WHERE user = :user');
 	$statement->execute(array(':user' => $creator));
 	$resultado = $statement->fetch();
@@ -61,14 +61,18 @@
 		}
 		
 		if(isset($_POST['estado']) && $_POST['estado'] == 'on'){
-			$estado = 'premium';
+			if($cdest > 0){
+				$estado = 'premium';
+			}else{
+				$errores = 'No tienes la posibilidad de destacar un anuncio, tienes ' . $cdest .  ' anuncios para destacar';
+			}
 		}else{
 			$estado = 'common';
 		}
 		
 		if(empty($errores)){
 
-			$conexion = conect('sanluis');
+			$conexion = conect();
 
 			$statement = $conexion->prepare('
 				INSERT INTO anuncios(thumb, titulo, descripcion, contacto, categoria, estado, precio, creator) VALUES (:thumb, :titulo, :descripcion, :contacto, :categoria, :estado, :precio, :creator)
@@ -98,7 +102,7 @@
 				));
 			}
 			
-			header('Location: ../../');
+			header('Location: ../../?status=ok&message=Anuncio agregado correctamente');
 		}
 	}
 	

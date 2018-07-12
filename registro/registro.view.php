@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Registrate</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
 	<link rel="stylesheet" href="estilos/estilos.css">
@@ -36,7 +37,7 @@
 			</form>
 			<div class="areyou">
 				<p>¿Ya tienes una cuenta?</p>
-				<a href="../login/login.php">Logueate</a>
+				<a href="../login/">Logueate</a>
 			</div>
 		</div>
 	</div>

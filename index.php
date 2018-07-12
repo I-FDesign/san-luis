@@ -1,17 +1,23 @@
 <?php session_start();
 	require 'admin/functions.php';
-	$conexion = conect('sanluis');
-	$categoria = (isset($_GET['cat']) && !is_numeric($_GET['cat']) && !empty($_GET['cat'])) ? $_GET['cat'] : 'all';
+	$conexion = conect();
+
+//Categoria
+	$categoria = (isset($_GET['cat']) && !is_numeric($_GET['cat']) && !empty($_GET['cat']))  ? $_GET['cat'] : 'all';
+
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>San Luis Publica</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"> 
-	<link rel="stylesheet" type="text/css" href="styles/font-awesome.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="styles/font-awesome.min.css"> -->
+	<script src="https://use.fontawesome.com/2d83eb3d68.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+
 </head>
 <body>
 	<header>
@@ -21,32 +27,45 @@
 				<i class="fa fa-bars" aria-hidden="true" id='show-menu'></i>
 			</div>
 		</div>
+		<?php require 'message.php'; ?>
 		<div class="head">
 			<img src="img/thumb.png">
 			<div class="content">			
 				<div class="nav">
 					<nav id='menu'>
-						<a href="#">Listado</a>
+						<a href="#" id='listado'>Listado</a>
 						<div class="categorias">
 							<a href="#">Categorias</a>
 							<i class="fa fa-sort-desc" aria-hidden="true"></i>
 						</div>
 						<a href="#" id='howto'>Como usar el sitio</a>
-						<a href="#">Contacto</a>
+						<a href="#" id='contacto'>Contacto</a>
 					</nav>
 				</div>
 			</div>
 			<div class="categories">
-				<a href="?cat=all">Categoria1</a href="?cat=all">
-				<a href="?cat=all">Categoria2</a href="?cat=all">
-				<a href="?cat=all">Categoria3</a href="?cat=all">
-				<a href="?cat=all">Categoria4</a href="?cat=all">
-				<a href="?cat=all">Categoria5</a href="?cat=all">
-				<a href="?cat=all">Categoria6</a href="?cat=all">
-				<a href="?cat=all">Categoria7</a href="?cat=all">
-				<a href="?cat=all">Categoria8</a href="?cat=all">
-				<a href="?cat=all">Categoria9</a href="?cat=all">
-				<a href="?cat=all">Categoria10</a href="?cat=all">
+				<a href="?cat=tec">Tecnología</a href="?cat=all">
+				<a href="?cat=tel">Telefonos y dispositivos móviles</a href="?cat=all">
+				<a href="?cat=cam">Camaras y accesorios</a href="?cat=all">
+				<a href="?cat=ani">Animales y Mascotas</a href="?cat=all">
+				<a href="?cat=elec">Electrodomésticos</a href="?cat=all">
+				<a href="?cat=autos">Autos y Accesorios</a href="?cat=all">
+				<a href="?cat=motos">Motos y otros</a href="?cat=all">
+				<a href="?cat=inm">Inmuebles (alquileres)</a href="?cat=all">
+				<a href="?cat=comp">Computadoras y consolas</a href="?cat=all">
+				<a href="?cat=hogar">Hogar</a href="?cat=all">
+				<a href="?cat=ropa">Ropa y Calzado</a href="?cat=all">
+				<a href="?cat=deportes">Deportes</a href="?cat=all">
+				<a href="?cat=ind">Industria y Oficina</a href="?cat=all">
+				<a href="?cat=jardin">Jardín</a href="?cat=all">
+				<a href="?cat=sal">Salud y Belleza</a href="?cat=all">
+				<a href="?cat=art">Arte y Artesanías</a href="?cat=all">
+				<a href="?cat=baby">Bebes y Niños</a href="?cat=all">
+				<a href="?cat=hobbies">Hobbies y coleccionistas</a href="?cat=all">
+				<a href="?cat=servicios">Servicios</a href="?cat=all">
+				<a href="?cat=ent">Entradas para eventos</a href="?cat=all">
+				<a href="?cat=work">Trabajo y empleo</a href="?cat=all">
+				<a href="?cat=other">Otros</a href="?cat=all">
 			</div>
 		</div>
 	</header>
@@ -84,6 +103,10 @@
 			</div>
 		</div>
 		<div class="user-options">
+			<div class="my-anun">
+				<i class="fa fa-list" aria-hidden="true"></i>
+				<p>Mis anuncios</p>
+			</div>
 			<div class="logout">
 				<i class="fa fa-sign-out" aria-hidden="true"></i>
 				<p>Cerrar Sesión</p>
@@ -166,8 +189,8 @@
 		<div class="destacados">
 			<div class="content">
 				<div class="viewmore">
-					<p>Ver más</p>
-					<div class="vm-icon">
+					<p class='vm_d'>Ver más</p>
+					<div class="vm-icon vm_d">
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
 					</div>
 				</div>
@@ -211,8 +234,8 @@
 		<div class="comunes">
 			<div class="content">
 				<div class="viewmore">
-					<p>Ver más</p>
-					<div class="vm-icon">
+					<p class='vm_c'>Ver más</p>
+					<div class="vm-icon vm_c">
 						<i class="fa fa-angle-right" aria-hidden="true"></i>
 					</div>
 				</div>
@@ -286,10 +309,13 @@
 					<li>Publicar un anuncio.</li>
 					<p>Dirigete a la seccion superior de la pagina y haz click en el boton "+", una vez alli ingresa informacion, imagenes, etc sobre el anuncio a publicar.</p>
 					<li>Destacar el anuncio. <span>(Opcional)</span></li>
-					<p>La opcion de destacar el anuncio es muy util ya que permite que tu anuncio aparezca hasta arriba en el listado, dandote asi un mayor trafico en tu anuncio.</p>
+					<p>La opcion de destacar el anuncio es muy util ya que permite que tu anuncio aparezca hasta arriba en el listado, dandote asi un mayor trafico en tu anuncio. Puedes acceder a esta caracteristica por un precio razonable dirigiendote a la seccion de agregar anuncio y comprando un anuncio destacado, los anuncios destacados son ILIMITADOS.</p>
 				</ul>
 			</div>
 		</div>
+	<!-- --------------------Contacto-------------------- -->
+	<?php require 'contacto/index.php'; ?>
+	<!-- ------------------------------------------------ -->
 	</section>
 	<footer>
 		<div class="sanluis">
@@ -300,12 +326,8 @@
 		</div>
 	</footer>
 
-			<!-- <i class="fa fa-cog" aria-hidden="true"></i>
-				<i class="fa fa-calendar" aria-hidden="true"></i>
-				<i class="fa fa-angle-left"aria-hidden="true"></i> 
-			-->
 	<script src="js/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src='js/efect.js'></script>
+	<script type="text/javascript" src='js/efects.js'></script>
 	<script type="text/javascript" src='js/application.js'></script>
 </body>
 </html>

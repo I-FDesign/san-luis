@@ -6,12 +6,18 @@
 		header('Location: ../../login/login.php');
 	}
 
+	$conexion = conect();
+	$statement = $conexion->prepare('SELECT * FROM usuarios WHERE user = :user');
+	$statement->execute(array(':user' => $creator));
+	$resultado = $statement->fetch();
+	$cdest = $resultado['cdest'];
+
 	if(isset($_GET['id'])){
 		$id = (is_numeric($_GET['id'])) ? $_GET['id'] : 1;
 	}else{
 		$id = 1;
 	}
-	$conexion = conect('sanluis');
+	$conexion = conect();
 
 	$statement = $conexion->prepare('SELECT * FROM anuncios WHERE id = :id');
 	$statement->execute(array(':id' => $id));
@@ -86,8 +92,11 @@
 			));
 
 			if(isset($_POST['estado']) && $_POST['estado'] == 'on'){
-				$estado = 'premium';
-
+				if($cdest > 0){
+					$estado = 'premium';
+				}else{
+					$errores = 'No tienes la posibilidad de destacar un anuncio, tienes ' . $cdest .  ' anuncios para destacar';
+				}
 				$statement = $conexion->prepare('
 					UPDATE anuncios SET estado = :estado WHERE id = :id
 				');
@@ -97,7 +106,7 @@
 				));
 			}
 
-			header('Location: ../../');
+			header('Location: ../../?status=ok&message=Anuncio modificado correctamente');
 		}
 	}
 

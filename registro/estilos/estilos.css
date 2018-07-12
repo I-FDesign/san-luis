@@ -87,3 +87,8 @@ body{
 .formulario .areyou a:hover{
   color:#4E90F2;
 }
+.error{
+  color:#F23D3D;
+  font-size: 15px;
+  margin-top: 5px;
+}
