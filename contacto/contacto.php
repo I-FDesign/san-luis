@@ -20,15 +20,15 @@
 					$ct_errors = 'Debes ingresar un mensaje' . '<br />';
 				}
 			if(empty($ct_errors)){
-				// $enviar_a = 'santupa767@gmail.com';
-				// $asunto = 'Correo enviado desde SanluisPublica.com';
-				// $mensaje_preparado = "De: $ct_name \n";
-				// $mensaje_preparado .= "Correo: $ct_mail \n";
-				// $mensaje_preparado .= "Mensaje: " . $ct_message;
 
-				// mail($enviar_a, $asunto, $mensaje_preparado);
+				$enviar_a = 'santupa767@gmail.com';
+				$asunto = 'Correo enviado desde SanluisPublica.com';
+				$mensaje_preparado = "De: $ct_name \n";
+				$mensaje_preparado .= "Correo: $ct_mail \n";
+				$mensaje_preparado .= "Mensaje: " . $ct_message;
+
+				mail($enviar_a, $asunto, $mensaje_preparado);
 				$ct_enviado = true;
-
 			}
 		}else{
 			if(!empty($_POST['name'])){
@@ -56,13 +56,13 @@
 
 			if(empty($ct_errors)){
 
-				// $enviar_a = 'santupa767@gmail.com';
-				// $asunto = 'Correo enviado desde SanluisPublica.com';
-				// $mensaje_preparado = "De: $ct_name \n";
-				// $mensaje_preparado .= "Correo: $ct_mail \n";
-				// $mensaje_preparado .= "Mensaje: " . $ct_message;
+				$enviar_a = 'santupa767@gmail.com';
+				$asunto = 'Correo enviado desde SanluisPublica.com';
+				$mensaje_preparado = "De: $ct_name \n";
+				$mensaje_preparado .= "Correo: $ct_mail \n";
+				$mensaje_preparado .= "Mensaje: " . $ct_message;
 
-				// mail($enviar_a, $asunto, $mensaje_preparado);
+				mail($enviar_a, $asunto, $mensaje_preparado);
 				$ct_enviado = true;
 			}
 		}

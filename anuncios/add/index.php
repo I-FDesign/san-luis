@@ -11,7 +11,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="../../img/favicon.ico" />
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="../../styles/font-awesome.min.css">
+	<script src="https://use.fontawesome.com/2d83eb3d68.js"></script>
 	<link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
 <body>
@@ -26,7 +26,7 @@
 					<div class="form-mp">
 						<form action="../../sl-pays/procesar-pago/index.php" method="POST">
 							  <script src="https://www.mercadopago.com.ar/integrations/v1/checkout.js"
-							   data-public-key="TEST-678d9f8d-b6a2-42a5-9336-eb86e6c58664"
+							   data-public-key="APP_USR-fb2d2372-4a92-4c83-952b-d52b4ba3a306"
 							   data-transaction-amount="500.00"
 							   >
 							  </script>

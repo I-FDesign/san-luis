@@ -8,7 +8,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="../../img/favicon.ico" />
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../../styles/font-awesome.min.css">
+	<script src="https://use.fontawesome.com/2d83eb3d68.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../styles/styles.css">
 	<link rel="stylesheet" type="text/css" href="../styles.css">
 </head>
