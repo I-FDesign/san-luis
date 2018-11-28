@@ -10,9 +10,6 @@
  	$statement->execute(array(':estado' => 'common'));
  	$resultados_d = $statement->fetchAll();
  	
- 	// if(!$resultados_d){
- 	// 	header('Location: ../../');
- 	// }
 
  	$totalAnuncios = $conexion->query('SELECT FOUND_ROWS() as total');
 	$totalAnuncios = $totalAnuncios->fetch()['total'];

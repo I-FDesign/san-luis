@@ -27,7 +27,7 @@
  	MercadoPago\SDK::setAccessToken("TEST-1251596843495116-061217-161ace8f6ae1233eaf94db45e587867a-323292690");
     //...
     $payment = new MercadoPago\Payment();
-    $payment->transaction_amount = 50;
+    $payment->transaction_amount = 200;
     $payment->token = $token;
     $payment->description = "Anuncio Destacado";
     $payment->installments = $installments;

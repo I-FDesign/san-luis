@@ -309,7 +309,7 @@
 					<li>Publicar un anuncio.</li>
 					<p>Dirigete a la seccion superior de la pagina y haz click en el boton "+", una vez alli ingresa informacion, imagenes, etc sobre el anuncio a publicar.</p>
 					<li>Destacar el anuncio. <span>(Opcional)</span></li>
-					<p>La opcion de destacar el anuncio es muy util ya que permite que tu anuncio aparezca hasta arriba en el listado, dandote asi un mayor trafico en tu anuncio. Puedes acceder a esta caracteristica por un precio razonable dirigiendote a la seccion de agregar anuncio y comprando un anuncio destacado, los anuncios destacados son ILIMITADOS.</p>
+					<p>La opcion de destacar el anuncio es muy util ya que permite que tu anuncio aparezca hasta arriba en el listado, dandote asi un mayor trafico en tu anuncio. Puedes acceder a esta caracteristica por un precio razonable dirigiendote a la seccion de agregar anuncio y comprando un anuncio destacado, los anuncios destacados duran 1 SEMANA, y luego de ese lapso pueden ser renovados.</p>
 				</ul>
 			</div>
 		</div>

@@ -62,6 +62,13 @@ body{
 	min-width: 100%;
 	box-shadow: 0px 0px 15px rgba(0,0,0, .5);
 }
+.anuncio a{
+	color:black;
+	text-decoration: none;
+}
+.anuncio a:hover{
+	color:rgba(0,0,0,.7);
+}
 .anuncio .content .info .tit p,
 .anuncio .content .info p.contacto,
 .anuncio .content .info p.categoria{

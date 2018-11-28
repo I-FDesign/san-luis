@@ -31,7 +31,11 @@
 			if($resultado !== false){
 
 				if($resultado['pass'] == $pass && empty($errores)){
-				$_SESSION['sl_user'] = $resultado['user'];
+
+					$_SESSION['sl_user'] = $resultado['user'];
+
+					require 'verif.php';
+
 					header('Location: ../index.php');
 				}else{
 					$errores .= 'La contraseña es incorrecta';

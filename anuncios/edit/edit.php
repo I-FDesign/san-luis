@@ -94,16 +94,28 @@
 			if(isset($_POST['estado']) && $_POST['estado'] == 'on'){
 				if($cdest > 0){
 					$estado = 'premium';
+					$fpremium = strtotime(date("d-m-Y H:i:00", time())) - 17960 + 604740;
+					$fpremium = date("d-m-Y H:i:00", $fpremium);
+					$cdest = $cdest - 1;
+
 				}else{
 					$errores = 'No tienes la posibilidad de destacar un anuncio, tienes ' . $cdest .  ' anuncios para destacar';
 				}
-				$statement = $conexion->prepare('
-					UPDATE anuncios SET estado = :estado WHERE id = :id
-				');
-				$statement->execute(array(
-					':estado' => $estado,
-					':id' => $_POST['id']
-				));
+				if(empty($errores)){
+					
+					$statement = $conexion->prepare('UPDATE usuarios SET cdest = :cdest WHERE user = :user');
+					$statement->execute(array(':cdest' => $cdest, ':user' => $resultado['creator']));
+
+
+					$statement = $conexion->prepare('
+						UPDATE anuncios SET estado = :estado, fpremium = :fpremium WHERE id = :id
+					');
+					$statement->execute(array(
+						':estado' => $estado,
+						':fpremium' => $fpremium,
+						':id' => $_POST['id']
+					));
+				}
 			}
 
 			header('Location: ../../?status=ok&message=Anuncio modificado correctamente');

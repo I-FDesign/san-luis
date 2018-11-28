@@ -28,7 +28,9 @@
 				<div class="tit">
 					<p><?php echo $resultado['titulo'] ?></p>
 				</div>
-				<p class="contacto">Contacto: <span><?php echo $resultado['contacto'] ?></span></p>
+				<a href="mailto:<?php echo $resultado['contacto'] ?>">
+					<p class="contacto">Contacto: <span><?php echo $resultado['contacto'] ?></span></p>
+				</a>
 				<p class="categoria">Categoria: <span><?php echo $categoria; ?></span></p>
 				<p class="precio">Precio: <span><?php echo $resultado['precio'] ?></span></p>
 			</div>

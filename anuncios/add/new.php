@@ -63,11 +63,14 @@
 		if(isset($_POST['estado']) && $_POST['estado'] == 'on'){
 			if($cdest > 0){
 				$estado = 'premium';
+				$fpremium = strtotime(date("d-m-Y H:i:00", time())) - 17960 + 604740;
+				$fpremium = date("d-m-Y H:i:00", $fpremium);
 			}else{
 				$errores = 'No tienes la posibilidad de destacar un anuncio, tienes ' . $cdest .  ' anuncios para destacar';
 			}
 		}else{
 			$estado = 'common';
+			$fpremium = '0';
 		}
 		
 		if(empty($errores)){
@@ -75,7 +78,7 @@
 			$conexion = conect();
 
 			$statement = $conexion->prepare('
-				INSERT INTO anuncios(thumb, titulo, descripcion, contacto, categoria, estado, precio, creator) VALUES (:thumb, :titulo, :descripcion, :contacto, :categoria, :estado, :precio, :creator)
+				INSERT INTO anuncios(thumb, titulo, descripcion, contacto, categoria, estado, precio, creator, fpremium) VALUES (:thumb, :titulo, :descripcion, :contacto, :categoria, :estado, :precio, :creator, :fpremium)
 			');
 
 			$statement->execute(array(
@@ -86,7 +89,8 @@
 				':categoria' => $categoria,
 				':estado' => $estado,
 				':precio' => $precio,
-				':creator' => $creator
+				':creator' => $creator,
+				':fpremium' => $fpremium
 				));
 
 			$directorio = '../../img/anuncios/' . $thumb['name'];

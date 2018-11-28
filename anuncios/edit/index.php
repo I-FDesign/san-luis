@@ -27,7 +27,7 @@
 						<form action="../../sl-pays/procesar-pago/index.php" method="POST">
 							  <script src="https://www.mercadopago.com.ar/integrations/v1/checkout.js"
 							   data-public-key="APP_USR-fb2d2372-4a92-4c83-952b-d52b4ba3a306"
-							   data-transaction-amount="500.00"
+							   data-transaction-amount="200.00"
 							   >
 							  </script>
 						</form>
